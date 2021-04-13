@@ -245,7 +245,7 @@ export default baseMixins.extend({
   watch: {
     $route: 'onRouteChange',
     isActive (val) {
-      this.$emit('input', val)
+      val !== this.isActive && this.$emit('input', val)
     },
     /**
      * When mobile changes, adjust the active state
